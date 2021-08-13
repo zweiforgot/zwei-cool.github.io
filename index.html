@@ -44,6 +44,7 @@ document.getElementById("myinput").onclick = function() {
     .then(function(data){ 
     document.getElementById("message").innerHTML = "Your short link is " + data.shortURL })
     document.getElementById("linkinput").value='';
+    console.log(data.shortURL);
  }
     
     </script>
