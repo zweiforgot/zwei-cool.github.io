@@ -1,4 +1,4 @@
-// reset
+
 html { box-sizing: border-box; font-size: 10px; }
 *, *:before, *:after { box-sizing: inherit; }
 body, ul, li  { margin: 0; padding: 0; }
@@ -8,7 +8,7 @@ a { text-decoration: none; }
 input { border-style: none; background: transparent; outline: none; }
 button { padding: 0; background: none; border: none; outline: none; }
 
-// some basic page styles
+
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -16,7 +16,7 @@ body {
   background-image: radial-gradient(circle at 0% 0%, #373b52, #252736 51%, #1d1e26);
 }
 
-// for demo
+
 h1.demo {
   text-align: center;
   font-size: 2.4rem;
@@ -44,12 +44,11 @@ a.demo {
   margin: 0 auto;
 }
 
-// colors
+
 $input-background: rgba(57, 63, 84, 0.8);
 $input-text-inactive: #7881A1;
 $input-text-active: #BFD2FF;
 
-// gradient animation
 @keyframes gradient { 
   0%{background-position:0 0}
   100%{background-position:100% 0}
@@ -65,7 +64,7 @@ $input-text-active: #BFD2FF;
   border-radius: 2px;
   padding: 1.4rem 2rem 1.6rem;
   background: $input-background;
-  &::after {
+  &:after {
     content: '';
     position: absolute;
     left: 0px;
