@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Webflow-style email input</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel='stylesheet' href='https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css'><link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="container">
+  
+  <div class="demo-flex-spacer"></div>
+
+  <div class="webflow-style-input">
+    <input class="" type="input" id="linkinput" placeholder="Link to shorten?"></input>
+    <button type="submit" id="myinput"><i class="icon ion-android-arrow-forward"></i></button>
+  </div>
+ <h1 class="demo" id="spacer"> </h1>
+ <h1 class="demo" id="message"></h1>
+  <div class="demo-flex-spacer"></div>
+  <h1 class="demo">Made by zwei#0001</h1>
+  <a class="demo" href="https://www.youtube.com/watch?v=-1kj837fWpo" title="sus">:)</a>
+ <script>
+document.getElementById("myinput").onclick = function() {
+  var link = document.getElementById("linkinput").value;
+  var data = {
+    "domain":"zwei.tk",
+    "originalURL": link,
+    "allowDuplicates":false }; 
+ fetch('https://api.short.cm/links/public', {
+    method: 'post',
+    headers: {
+      'accept': 'application/json',
+      'Content-Type': 'application/json',
+      'authorization': 'pk_lpCD4uAMo9DftYgi'
+    },
+    body: JSON.stringify(data)
+  }) .then(function(response) {
+        return response.json();
+    }) 
+    .then(function(data){ 
+    document.getElementById("message").innerHTML = "Your short link is " + data.shortURL })
+    document.getElementById("linkinput").value='';
+ }
+    </script>
+</div>
+<!-- partial -->
+  
+</body>
+</html>
