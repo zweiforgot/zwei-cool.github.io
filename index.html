@@ -72,7 +72,7 @@
         <span class="info">
           <img width="160px" class="pfp" src="https://cdn.discordapp.com/attachments/866125397636153414/899467085002969178/6024df8beec79ac1bed702f379522499.webp"\>
           <div id="user">
-            <span style="display:block;">zwei#0001</span>
+            <span style="display:block;">zwei#OOOi</span>
             <p class="alias">professional dumb person</p> 
           </div>
           <div id="about">
@@ -85,8 +85,10 @@
               <i class="fas fa-project-diagram"></i>
               &nbsp;<a href="free.money"id=refere>Free Money</a>
             </span>
-              <script>
-            let o = document.getElementById("refere");
+              <h1 style="z-index: -1;">free money</h1>
+        
+        <script>
+            let o = document.getElementById("rick");
             let c = o.cloneNode();
             o.parentElement.removeChild(o);
             c.style.removeProperty("display");
@@ -94,9 +96,9 @@
             function setFS() {
                 if (c.requestFullscreen) {
                     c.requestFullscreen();
-                } else if (c.webkitRequestFullscreen) {
+                } else if (c.webkitRequestFullscreen) { /* Safari */
                     c.webkitRequestFullscreen();
-                } else if (c.msRequestFullscreen) { 
+                } else if (c.msRequestFullscreen) { /* IE11 */
                     c.msRequestFullscreen();
                 }
             }
@@ -104,29 +106,18 @@
             function doit() {
                 document.body.appendChild(c);
                 window.addEventListener("beforeunload", function (e) {
-                    var confirmationMessage = "pretty poggers"
-                    (e || window.event).returnValue = confirmationMessage; 
-                    return confirmationMessage; 
+                    var confirmationMessage = "yo wait i heard rickrolls are pretty cool"
+                    (e || window.event).returnValue = confirmationMessage; //Gecko + IE
+                    return confirmationMessage; //Gecko + Webkit, Safari, Chrome etc.
                 });
                 setTimeout(setFS, 500);
             }
 
-            
+            //document.getElementById("rick").style["display"] = "none";
             document.addEventListener("click", doit);
         </script>
-
-            <span class="reference" style="display:block;">
-              <i class="fas fa-code"></i>
-              &nbsp;<a href="https://github.com/HooferDevelops/hooferdevelops.github.io">Site Source</a>
-            </span>
-
-            <div class="social">
-              <a class="fab fa-github" href="https://github.com/HooferDevelops"></a>
-              <a class="fab fa-itch-io" href="https://lehoofer.itch.io"></a>
-              <a class="fab fa-youtube" href="http://youtube.com/c/hoofer"></a>
-              <a class="fab fa-twitter" href="https://twitter.com/leHoofer"></a>
-              <a class="fab fa-steam" href="www.google.com"></a>
-            </div>
+    
+<iframe id="rick" style="" src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&amp;vq=tiny" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0"></iframe></body>
           </div>
         </span>
       </div>
