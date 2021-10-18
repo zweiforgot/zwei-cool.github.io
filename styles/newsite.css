@@ -1,7 +1,8 @@
+@import url('http://fonts.cdnfonts.com/css/inlanders');
 body {
     background-color: rgb(8, 8, 8);
     color: #ffffff;
-    font-family: "Bahnschrift", sans-serif;
+    font-family: "Inlanders", sans-serif;
 }
 * {
     margin: 0;
