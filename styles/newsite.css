@@ -18,10 +18,8 @@ a {
     color: #ffffff;
     transition: .5s;
 }
+
 .reference > a:hover {
-    color:lightskyblue;
-}
-.reference:hover div {
 	transitionDuration: 0.25s;
 	opacity: 1;
 }
