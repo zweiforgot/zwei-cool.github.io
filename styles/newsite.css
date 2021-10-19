@@ -1,4 +1,10 @@
-@import url('http://fonts.cdnfonts.com/css/inlanders');
+@font-face {
+    font-family: 'Inlanders';
+    font-style: normal;
+    font-weight: 700;
+    src: local('Inlanders'), url('https://fonts.cdnfonts.com/s/30045/Inlanders Demo.woff') format('woff');
+}
+
 body {
     background-color: rgb(8, 8, 8);
     color: #ffffff;
@@ -14,6 +20,28 @@ a {
 }
 .reference > a:hover {
     color:lightskyblue;
+}
+.reference:hover div {
+	transitionDuration: 0.25s;
+	opacity: 1;
+}
+
+.reference div {
+	filter: blur(1px);
+	height: 100%;
+	transition: opacity 1.5s ease;
+	background: linear-gradient(91.83deg, rgb(208, 60, 74) 2.26%, rgb(172, 74, 218) 95.81%);
+	animation: 10s ease-in-out 0s infinite normal both running pulse;
+	opacity: 0.75;
+}
+
+.reference span {
+	padding: 12px 24px;
+	backgroundColor: white;
+	color: black;
+	borderRadius: 8px;
+	cursor: pointer;
+	transition: transform 250ms cubic-bezier(.2,.8,.4,1);
 }
 .social > a:hover {
     color: lightskyblue;
