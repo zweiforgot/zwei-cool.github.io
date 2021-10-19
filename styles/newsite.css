@@ -18,32 +18,6 @@ a {
     color: #ffffff;
     transition: .5s;
 }
-
-.reference > a:hover {
-	transitionDuration: 0.25s;
-	opacity: 1;
-}
-
-.reference div {
-	filter: blur(1px);
-	height: 100%;
-	transition: opacity 1.5s ease;
-	background: linear-gradient(91.83deg, rgb(208, 60, 74) 2.26%, rgb(172, 74, 218) 95.81%);
-	animation: 10s ease-in-out 0s infinite normal both running pulse;
-	opacity: 0.75;
-}
-
-.reference span {
-	padding: 12px 24px;
-	backgroundColor: white;
-	color: black;
-	borderRadius: 8px;
-	cursor: pointer;
-	transition: transform 250ms cubic-bezier(.2,.8,.4,1);
-}
-.social > a:hover {
-    color: lightskyblue;
-}
 .glow:hover {
     text-shadow: 0 0 32px white;
 }
