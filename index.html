@@ -1,14 +1,3 @@
-<!DOCTYPE html>
-<html lang="en" >
-<head>
-  <meta charset="UTF-8">
-  <title>Sparkplug</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-<link rel="stylesheet" href="./dist/style.css">
-
-</head>
-<body>
-<!-- partial:index.partial.html -->
 <!-- 
 <div class="content-wrapper-header">
      <div class="content-wrapper-context">
@@ -27,23 +16,21 @@
 -->
 <div class="video-bg">
  <video width="320" height="240" autoplay loop muted>
-  <source src="./mp4/back.mp4" type="video/mp4">
+  <source src="https://assets.codepen.io/3364143/7btrrd.mp4" type="video/mp4">
   Your browser does not support the video tag.
  </video>
 </div>
 <div class="dark-light">
- <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" />
- </svg>
+ Change Theme
 </div>
 <div class="app">
  <div class="header">
   <div class="menu-circle"></div>
   <div class="header-menu">
-   <a class="menu-link is-active" href="#">Home</a>
-   <a class="menu-link" href="#">Updates</a>
-   <a class="menu-link" href="#">Information</a>
-   <a class="menu-link" href="#">Credits</a>
+   <a class="menu-link is-active" id="home-menu">Home</a>
+   <a class="menu-link" id="upd-menu">Updates</a>
+   <a class="menu-link" id="info-menu">Information</a>
+   <a class="menu-link" id="cred-menu">Credits</a>
   </div>
   <div class="search-bar">
    <input type="text" placeholder="Search">
@@ -74,7 +61,11 @@
       Home
      </a>
      <a href="#">
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-up-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="16 12 12 8 8 12"></polyline><line x1="12" y1="16" x2="12" y2="8"></line></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-up-circle">
+       <circle cx="12" cy="12" r="10"></circle>
+       <polyline points="16 12 12 8 8 12"></polyline>
+       <line x1="12" y1="16" x2="12" y2="8"></line>
+      </svg>
       Updates
       <!--<span class="notification-number updates">3</span>-->
      </a>
@@ -156,34 +147,36 @@
     </div>
    </div>
   </div>
-  <div class="main-container">
+  
+  <div class="content-wrapper" id="homeTab">
+   <div class="content-wrapper-header" id="purple2">
+    <div class="content-wrapper-context">
+     <h3 class="img-content">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-zap">
+       <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+      </svg>
+      Sparkplug
+     </h3>
+     <div class="content-text">Welcome to Sparkplug, placeholder text until I finally finish the description.</div>
+    </div>
    </div>
-   <div class="content-wrapper" id="purple1">
-    <div class="content-wrapper-header" id='purple2'>
-     <div class="content-wrapper-context">
-      <h3 class="img-content">
-       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-zap"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
-       Sparkplug
-      </h3>
-      <div class="content-text">Welcome to Sparkplug, a place for students to 'pass the border' and play the games they want to.</div>
-     </div>
+   <br>
+
+   <div class="content-wrapper-header">
+    <div class="content-wrapper-context">
+     <h3 class="img-content">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user">
+       <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+       <circle cx="12" cy="7" r="4"></circle>
+      </svg>
+      Don't know where to get started?
+     </h3>
+     <div class="content-text">Choose something from the list below. These are all games that the creator has picked for new players.</div>
     </div>
-    <br>
+   </div>
    
-     <div class="content-wrapper-header">
-     <div class="content-wrapper-context">
-      <h3 class="img-content">
-       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user">
-        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-        <circle cx="12" cy="7" r="4"></circle>
-       </svg>
-       Don't know where to get started?
-      </h3>
-      <div class="content-text">Choose something from the list below. These are all games that the creator has picked for new players.</div>
-     </div>
-    </div>
-      <!--
-<ul>
+   <div class="content-section">
+    <!--<ul>
      <li class="adobe-product">
        <div class="products">
         <svg viewBox="0 0 52 52" style="border:1px solid #3291b8">
@@ -225,27 +218,9 @@
         Update Available</span>
        <div class="button-wrapper">
         <button class="content-button status-button">Update this app</button>
-        <div class="pop-up">
-         <div class="pop-up__title">Update This App
-          <svg class="close" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x-circle">
-           <circle cx="12" cy="12" r="10" />
-           <path d="M15 9l-6 6M9 9l6 6" />
-          </svg>
-         </div>
-         <div class="pop-up__subtitle">Adjust your selections for advanced options as desired before continuing. <a href="#">Learn more</a></div>
-         <div class="checkbox-wrapper">
-          <input type="checkbox" id="check1" class="checkbox">
-          <label for="check1">Import previous settings and preferences</label>
-         </div>
-         <div class="checkbox-wrapper">
-          <input type="checkbox" id="check2" class="checkbox">
-          <label for="check2">Remove old versions</label>
-         </div>
-         <div class="content-button-wrapper">
-          <button class="content-button status-button open close">Cancel</button>
-          <button class="content-button status-button">Continue</button>
-         </div>
-        </div>
+        
+        
+        
         <div class="menu">
          <button class="dropdown">
           <ul>
@@ -283,61 +258,263 @@
         </div>
        </div>
       </li>
-     </ul>
--->
-   
-    <div class="content-section">
-     <div class="apps-card">
-      <div class="app-card">
-       <span>
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-play-circle"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
-        Game 1 Title
-       </span>
-       <div class="app-card__subtext">Game 1 Long Text Description</div>
-       <div class="app-card-buttons">
-        <button class="content-button status-button">Play</button>
-        <div class="menu"></div>
-       </div>
-      </div>
-      <div class="app-card">
-       <span>
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-play-circle"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
-        Game 2 Title
-       </span>
-       <div class="app-card__subtext">Game 2 Long Text Description</div>
-       <div class="app-card-buttons">
-        <button class="content-button status-button">Play</button>
-        <div class="menu"></div>
-       </div>
-      </div>
-      <div class="app-card">
-       <span>
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-play-circle"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
-        Game 3 Title
-       </span>
-       <div class="app-card__subtext">Game 3 Long Text Description</div>
-       <div class="app-card-buttons">
-        <button class="content-button status-button">Play</button>
-        <div class="menu">
-         <button class="dropdown">
-          <ul>
-           <li><a href="#">Go to Discover</a></li>
-           <li><a href="#">Learn more</a></li>
-           <li><a href="#">Uninstall</a></li>
-          </ul>
-         </button>
+     </ul>-->
+    <div class="pop-up">
+         <div class="pop-up__title">Feedback
+          <svg class="close" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x-circle">
+           <circle cx="12" cy="12" r="10" />
+           <path d="M15 9l-6 6M9 9l6 6" />
+          </svg>
+         </div>
+         <div class="pop-up__subtitle">Could you give some feedback on this selection? Is there something you liked or disliked about it? Please answer below.</div>
+         <div class="checkbox-wrapper">
+          <input type="checkbox" id="check1" class="checkbox">
+          <label for="check1">I like this.</label>
+         </div>
+         <div class="checkbox-wrapper">
+          <input type="checkbox" id="check2" class="checkbox">
+          <label for="check2">I dislike this.</label>
+         </div>
+         <textarea id="feedtext"placeholder="Anything else? "style="position: relative; top: -20px; resize: none; min-width: 420px; max-width: 420px; min-height: 100px; max-height:100px; background-color: rgb(146 151 179 / 5%); border-radius: 6px; border-color: rgb(146 151 179 / 13%);font-family:'JetBrains Mono', monospace; color: #fff; font-size: 14px; padding: 5px;"></textarea>
+         <div class="content-button-wrapper">
+          <button class="content-button status-button open close">Cancel</button>
+          <button id="feedsend"class="content-button status-button">Continue</button>
+         </div>
         </div>
+    <div class="apps-card">
+     <div class="app-card">
+      <span>
+       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-play-circle">
+        <circle cx="12" cy="12" r="10"></circle>
+        <polygon points="10 8 16 12 10 16 10 8"></polygon>
+       </svg>
+       Game 1 Title
+      </span>
+      <div class="app-card__subtext">Game 1 Long Text Description</div>
+      <div class="app-card-buttons">
+       <button class="content-button status-button">Play</button>
+       <div class="menu">
+        <button class="dropdown">
+         <ul>
+          <li><a href="#">Share</a></li>
+          <li class="feedbutton"><a href="#">Feedback</a></li>
+         </ul>
+        </button>
+       </div>
+       
+      </div>
+      
+     </div>
+     <div class="app-card">
+      <span>
+       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-play-circle">
+        <circle cx="12" cy="12" r="10"></circle>
+        <polygon points="10 8 16 12 10 16 10 8"></polygon>
+       </svg>
+       Game 2 Title
+      </span>
+      <div class="app-card__subtext">Game 2 Long Text Description</div>
+      <div class="app-card-buttons">
+       <button class="content-button status-button">Play</button>
+      <div class="menu">
+        <button class="dropdown">
+         <ul>
+          <li><a href="#">Share</a></li>
+          <li class="feedbutton"><a href="#">Feedback</a></li>
+         </ul>
+        </button>
+       </div>
+      </div>
+     </div>
+     <div class="app-card">
+      <span>
+       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-play-circle">
+        <circle cx="12" cy="12" r="10"></circle>
+        <polygon points="10 8 16 12 10 16 10 8"></polygon>
+       </svg>
+       Game 3 Title
+      </span>
+      <div class="app-card__subtext">Game 3 Long Text Description</div>
+      <div class="app-card-buttons">
+       <button class="content-button status-button">Play</button>
+       <div class="menu">
+        <button class="dropdown">
+         <ul>
+          <li><a href="#">Share</a></li>
+          <li class="feedbutton"><a href="#">Feedback</a></li>
+         </ul>
+        </button>
        </div>
       </div>
      </div>
     </div>
-    <br><br><br><br><br>
+    <br><br><br><br><br><br>
+   </div>
+  </div>
+   <div style="display:none;"class="content-wrapper" id="updatesTab">
+   <div class="content-wrapper-header" id="blue1">
+    <div class="content-wrapper-context">
+     <h3 class="img-content">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-up-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="16 12 12 8 8 12"></polyline><line x1="12" y1="16" x2="12" y2="8"></line></svg>
+      Updates
+     </h3>
+     <div class="content-text">General news including game releases, announcements, and more.</div>
+    </div>
+   </div>
+   <div class="content-section" >
+    <ul>
+      <li class="adobe-product">
+       <div class="products">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-plus"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="12" y1="18" x2="12" y2="12"></line><line x1="9" y1="15" x2="15" y2="15"></line></svg>
+        New Games
+       </div>
+       <span class="status">
+        <span class="status-circle green"></span>
+        2/3/22</span>
+       <div class="button-wrapper">
+        <button class="content-button status-button">Read</button>
+       </div>
+      </li>
+      <li class="adobe-product">
+       <div class="products">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-send"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+        Launch!
+       </div>
+       <span class="status">
+        <span class="status-circle blue"></span>
+        2/3/22</span>
+       <div class="button-wrapper">
+        <button class="content-button status-button">Read</button>
+       
+       </div>
+      </li>
+     </ul>
+    <!--<div class="pop-up">
+         <div class="pop-up__title">Feedback
+          <svg class="close" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x-circle">
+           <circle cx="12" cy="12" r="10" />
+           <path d="M15 9l-6 6M9 9l6 6" />
+          </svg>
+         </div>
+         <div class="pop-up__subtitle">Could you give some feedback on this selection? Is there something you liked or disliked about it? Please answer below.</div>
+         <div class="checkbox-wrapper">
+          <input type="checkbox" id="check1" class="checkbox">
+          <label for="check1">I like this.</label>
+         </div>
+         <div class="checkbox-wrapper">
+          <input type="checkbox" id="check2" class="checkbox">
+          <label for="check2">I dislike this.</label>
+         </div>
+         <textarea id="feedtext"placeholder="Anything else? "style="position: relative; top: -20px; resize: none; min-width: 420px; max-width: 420px; min-height: 100px; max-height:100px; background-color: rgb(146 151 179 / 5%); border-radius: 6px; border-color: rgb(146 151 179 / 13%);font-family:'JetBrains Mono', monospace; color: #fff; font-size: 14px; padding: 5px;"></textarea>
+         <div class="content-button-wrapper">
+          <button class="content-button status-button open close">Cancel</button>
+          <button id="feedsend"class="content-button status-button">Continue</button>
+         </div>
+        </div>-->
+    <div class="apps-card">
+    
+     
+    </div>
+    <br><br><br><br><br><br>
+   </div>
+  </div>
+  <div style="display:none;"class="content-wrapper" id="infoTab">
+   <div class="content-wrapper-header" id="red1">
+    <div class="content-wrapper-context">
+     <h3 class="img-content">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-info"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+      Information
+     </h3>
+     <div class="content-text">Sparkplug is placeholder text until I finally finish the description. Placeholder text is cool, I know. Basically just filling space...</div>
+    </div>
+   </div>
+   <br>
+   
+   <div class="content-wrapper-header" id="red2">
+    <div class="content-wrapper-context">
+     <h3 class="img-content">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-paperclip"><path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"></path></svg>
+      Sources
+     </h3>
+     <div class="content-text">Every game hosted on Sparkplug is either sourced from other websites similar to Sparkplug, or are original ports made specifically for Sparkplug.</div>
+    </div>
+   </div>
+   <br>
+   <div class="content-wrapper-header" id="red3">
+    
+    <div class="content-wrapper-context">
+     <h3 class="img-content">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus-circle"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>
+      More information is being added soon.
+     </h3>
+    </div>
+   </div>
+   <br>
+   
+    <br><br><br><br><br><br>
+   </div>
+   <div style="display:none;"class="content-wrapper" id="creditsTab">
+   <div class="content-wrapper-header" id="bluegreen1">
+    <div class="content-wrapper-context" >
+     <h3 class="img-content">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-info"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+      Credits
+     </h3>
+    </div>
+    </div>
+    <div class="content-section" >
+    <ul>
+      <li class="adobe-product">
+       <div class="products">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-play-circle"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
+        Game Credits
+       </div>
+       <div class="button-wrapper">
+        <button class="content-button status-button">View</button>
+       </div>
+      </li>
+      <li class="adobe-product">
+       <div class="products">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-server"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect><rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect><line x1="6" y1="6" x2="6.01" y2="6"></line><line x1="6" y1="18" x2="6.01" y2="18"></line></svg>
+        Website Credits
+       </div>
+       
+       <div class="button-wrapper">
+        <button class="content-button status-button">View</button>
+       
+       </div>
+      </li>
+     </ul>
+    <!--<div class="pop-up">
+         <div class="pop-up__title">Feedback
+          <svg class="close" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x-circle">
+           <circle cx="12" cy="12" r="10" />
+           <path d="M15 9l-6 6M9 9l6 6" />
+          </svg>
+         </div>
+         <div class="pop-up__subtitle">Could you give some feedback on this selection? Is there something you liked or disliked about it? Please answer below.</div>
+         <div class="checkbox-wrapper">
+          <input type="checkbox" id="check1" class="checkbox">
+          <label for="check1">I like this.</label>
+         </div>
+         <div class="checkbox-wrapper">
+          <input type="checkbox" id="check2" class="checkbox">
+          <label for="check2">I dislike this.</label>
+         </div>
+         <textarea id="feedtext"placeholder="Anything else? "style="position: relative; top: -20px; resize: none; min-width: 420px; max-width: 420px; min-height: 100px; max-height:100px; background-color: rgb(146 151 179 / 5%); border-radius: 6px; border-color: rgb(146 151 179 / 13%);font-family:'JetBrains Mono', monospace; color: #fff; font-size: 14px; padding: 5px;"></textarea>
+         <div class="content-button-wrapper">
+          <button class="content-button status-button open close">Cancel</button>
+          <button id="feedsend"class="content-button status-button">Continue</button>
+         </div>
+        </div>-->
+    <div class="apps-card">
+    </div>
+    <br><br><br><br><br><br>
+   </div>
+   <br>
+ 
+    <br><br><br><br><br><br>
+   </div>
+  </div>
  </div>
- </div>
- <div class="overlay-app"></div>
 </div>
-<!-- partial -->
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script><script  src="./dist/script.js"></script>
-
-</body>
-</html>
