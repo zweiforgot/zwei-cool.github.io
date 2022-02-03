@@ -1,9 +1,13 @@
-/*$(function () {
+var transitioning = false;
+
+/*
+$(function () {
  $(".menu-link").click(function () {
   $(".menu-link").removeClass("is-active");
   $(this).addClass("is-active");
  });
 });
+*/
 
 $(function () {
  $(".main-header-link").click(function () {
@@ -58,16 +62,104 @@ $(function () {
  });
 });
 
-$(".status-button:not(.open)").click(function () {
- $(".pop-up").addClass("visible");
+$(".feedbutton").each(function () {
+ $(this).on("click", function () {
+  $(".pop-up").addClass("visible");
+ });
 });
 
 $(".pop-up .close").click(function () {
  $(".pop-up").removeClass("visible");
 });
 
-const toggleButton = document.querySelector('.dark-light');
+const toggleButton = document.querySelector(".dark-light");
 
-toggleButton.addEventListener('click', () => {
-  document.body.classList.toggle('light-mode');
+toggleButton.addEventListener("click", () => {
+ document.body.classList.toggle("light-mode");
+});
+
+$("#feedsend").on("click", function () {
+ var option1 = $("#check1").is(":checked");
+ var option2 = $("#check2").is(":checked");
+ var feedtext = $("#feedtext").val();
+ console.log(option1);
+ console.log(option2);
+ console.log(feedtext);
+ $(".pop-up").removeClass("visible");
+ $("#feedtext").val("");
+ $("#check1").prop("checked", false);
+ $("#check2").prop("checked", false);
+});
+
+$("#upd-menu").on("click", function () {
+ if(transitioning==false){
+  $("#upd-menu").addClass("is-active");
+   $("#info-menu").removeClass("is-active");
+   $("#cred-menu").removeClass("is-active");
+   $("#home-menu").removeClass("is-active");
+  transitioning=true;
+  $("#homeTab").fadeOut();
+  $("#infoTab").fadeOut();
+  $("#creditsTab").fadeOut();
+ setTimeout(function () {
+  $("#updatesTab").fadeIn();
+ }, 500);
+  setTimeout(function () {
+ transitioning=false;
+ }, 750);
+ }
+});
+$("#home-menu").on("click", function () {
+ if(transitioning==false){
+  $("#upd-menu").removeClass("is-active");
+   $("#info-menu").removeClass("is-active");
+   $("#cred-menu").removeClass("is-active");
+   $("#home-menu").addClass("is-active");
+  transitioning=true;
+  $("#updatesTab").fadeOut();
+  $("#infoTab").fadeOut();
+  $("#creditsTab").fadeOut();
+ setTimeout(function () {
+  $("#homeTab").fadeIn();
+ }, 500);
+  setTimeout(function () {
+ transitioning=false;
+ }, 750);
+ }
+});
+$("#info-menu").on("click", function () {
+ if(transitioning==false){
+  $("#upd-menu").removeClass("is-active");
+   $("#info-menu").addClass("is-active");
+   $("#cred-menu").removeClass("is-active");
+   $("#home-menu").removeClass("is-active");
+  transitioning=true;
+  $("#updatesTab").fadeOut();
+  $("#homeTab").fadeOut();
+  $("#creditsTab").fadeOut();
+ setTimeout(function () {
+  $("#infoTab").fadeIn();
+ }, 500);
+  setTimeout(function () {
+ transitioning=false;
+ }, 750);
+ }
+});
+$("#cred-menu").on("click", function () {
+ if(transitioning==false){
+  $("#upd-menu").removeClass("is-active");
+   $("#info-menu").removeClass("is-active");
+   $("#cred-menu").addClass("is-active");
+   $("#home-menu").removeClass("is-active");
+  transitioning=true;
+  $("#updatesTab").fadeOut();
+  $("#homeTab").fadeOut();
+  $("#infoTab").fadeOut();
+ setTimeout(function () {
+  $("#creditsTab").fadeIn();
+ }, 500);
+  setTimeout(function () {
+ transitioning=false;
+ }, 750);
+ }
 });
