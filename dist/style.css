@@ -87,18 +87,15 @@ img {
   background-color: var(--dropdown-bg);
   box-shadow: -1px 3px 8px -1px rgba(0, 0, 0, 0.2);
   padding: 8px;
-  border-radius: 50%;
+  border-radius: 8px;
   z-index: 3;
   cursor: pointer;
-}
-.dark-light svg {
-  width: 24px;
-  flex-shrink: 0;
-  fill: #ffce45;
-  stroke: #ffce45;
-  transition: 0.5s;
+  color: #fff;
 }
 
+.light-mode .dark-light {
+  color: #000;
+}
 .light-mode .dark-light svg {
   fill: transparent;
   stroke: var(--theme-color);
@@ -177,6 +174,7 @@ body.light-mode .video-bg:before {
   }
 }
 .header-menu a.is-active, .header-menu a:hover {
+  cursor: pointer;
   color: var(--theme-color);
   border-bottom: 2px solid var(--theme-color);
 }
@@ -421,7 +419,7 @@ body.light-mode .video-bg:before {
   }
 }
 
-#purple1 {
+#homeTab {
   display: flex;
   flex-direction: column;
   color: var(--theme-color);
@@ -431,25 +429,25 @@ body.light-mode .video-bg:before {
   background-color: var(--theme-bg-color);
 }
 @media screen and (max-width: 510px) {
-  #purple1 {
+  #homeTab {
     padding: 20px;
   }
 }
-#purple1 #purple2 {
+#homeTab #purple2 {
   display: flex;
   align-items: center;
   width: 100%;
   justify-content: space-between;
-  background-image: url("https://www.transparenttextures.com/patterns/gplay.png"), linear-gradient(to right top, #4568DC, #B06AB3) !important;
+  background-image: url("https://www.transparenttextures.com/patterns/gplay.png"), linear-gradient(to right top, #7f00ff, #f64f59) !important;
   border-radius: 14px;
   padding: 20px 40px;
 }
 @media screen and (max-width: 415px) {
-  #purple1 #purple2 {
+  #homeTab #purple2 {
     padding: 20px;
   }
 }
-#purple1 .content-wrapper {
+#homeTab .content-wrapper {
   display: flex;
   flex-direction: column;
   color: var(--theme-color);
@@ -459,11 +457,195 @@ body.light-mode .video-bg:before {
   background-color: rgba(0, 0, 0, 0);
 }
 @media screen and (max-width: 510px) {
-  #purple1 .content-wrapper {
+  #homeTab .content-wrapper {
     padding: 20px;
   }
 }
-#purple1 .content-wrapper-header {
+#homeTab .content-wrapper-header {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+  background-image: url("https://www.transparenttextures.com/patterns/gplay.png"), linear-gradient(to right top, #c04848, #480048);
+  border-radius: 14px;
+  padding: 20px 40px;
+}
+@media screen and (max-width: 415px) {
+  #homeTab .content-wrapper-header {
+    padding: 20px;
+  }
+}
+#homeTab.overlay {
+  pointer-events: none;
+  transition: 0.3s;
+  background-color: var(--overlay-bg);
+}
+
+#creditsTab {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  color: var(--theme-color);
+  padding: 20px 40px;
+  height: 100%;
+  overflow: auto;
+  background-color: var(--theme-bg-color);
+}
+@media screen and (max-width: 510px) {
+  #creditsTab {
+    padding: 20px;
+  }
+}
+#creditsTab #bluegreen1 {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+  background-image: url("https://www.transparenttextures.com/patterns/gplay.png"), linear-gradient(to right top, #000428, #004e92) !important;
+  border-radius: 14px;
+  padding: 20px 40px;
+}
+@media screen and (max-width: 415px) {
+  #creditsTab #bluegreen1 {
+    padding: 20px;
+  }
+}
+#creditsTab .content-wrapper {
+  display: flex;
+  flex-direction: column;
+  color: var(--theme-color);
+  padding: 20px 40px;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0);
+}
+@media screen and (max-width: 510px) {
+  #creditsTab .content-wrapper {
+    padding: 20px;
+  }
+}
+#creditsTab .content-wrapper-header {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+  background-image: url("https://www.transparenttextures.com/patterns/gplay.png"), linear-gradient(to right top, #c04848, #480048);
+  border-radius: 14px;
+  padding: 20px 40px;
+}
+@media screen and (max-width: 415px) {
+  #creditsTab .content-wrapper-header {
+    padding: 20px;
+  }
+}
+#creditsTab.overlay {
+  pointer-events: none;
+  transition: 0.3s;
+  background-color: var(--overlay-bg);
+}
+
+#updatesTab {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  color: var(--theme-color);
+  padding: 20px 40px;
+  height: 100%;
+  overflow: auto;
+  background-color: var(--theme-bg-color);
+}
+@media screen and (max-width: 510px) {
+  #updatesTab {
+    padding: 20px;
+  }
+}
+#updatesTab #blue1 {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+  background-image: url("https://www.transparenttextures.com/patterns/gplay.png"), linear-gradient(to right top, #3c1053, #ad5389) !important;
+  border-radius: 14px;
+  padding: 20px 40px;
+}
+@media screen and (max-width: 415px) {
+  #updatesTab #blue1 {
+    padding: 20px;
+  }
+}
+
+#infoTab {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  color: var(--theme-color);
+  padding: 20px 40px;
+  height: 100%;
+  overflow: auto;
+  background-color: var(--theme-bg-color);
+}
+@media screen and (max-width: 510px) {
+  #infoTab {
+    padding: 20px;
+  }
+}
+#infoTab #red1 {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+  background-image: url("https://www.transparenttextures.com/patterns/gplay.png"), linear-gradient(to right top, #89253e, #3a6186) !important;
+  border-radius: 14px;
+  padding: 20px 40px;
+}
+@media screen and (max-width: 415px) {
+  #infoTab #red1 {
+    padding: 20px;
+  }
+}
+#infoTab #red2 {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+  background-image: url("https://www.transparenttextures.com/patterns/gplay.png"), linear-gradient(to left bottom, #4b6cb7, #182848) !important;
+  border-radius: 14px;
+  padding: 20px 40px;
+}
+@media screen and (max-width: 415px) {
+  #infoTab #red2 {
+    padding: 20px;
+  }
+}
+#infoTab #red3 {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+  background-image: url("https://www.transparenttextures.com/patterns/gplay.png"), linear-gradient(to left bottom, #093637, #44a08d) !important;
+  border-radius: 14px;
+  padding: 20px 40px;
+}
+@media screen and (max-width: 415px) {
+  #infoTab #red3 {
+    padding: 20px;
+  }
+}
+#infoTab .content-wrapper {
+  display: flex;
+  flex-direction: column;
+  color: var(--theme-color);
+  padding: 20px 40px;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0);
+}
+@media screen and (max-width: 510px) {
+  #infoTab .content-wrapper {
+    padding: 20px;
+  }
+}
+#infoTab .content-wrapper-header {
   display: flex;
   align-items: center;
   width: 100%;
@@ -473,11 +655,11 @@ body.light-mode .video-bg:before {
   padding: 20px 40px;
 }
 @media screen and (max-width: 415px) {
-  #purple1 .content-wrapper-header {
+  #infoTab .content-wrapper-header {
     padding: 20px;
   }
 }
-#purple1.overlay {
+#infoTab.overlay {
   pointer-events: none;
   transition: 0.3s;
   background-color: var(--overlay-bg);
@@ -500,7 +682,6 @@ body.light-mode .video-bg:before {
 
 #grey2 {
   display: flex;
-  align-items: center;
   width: 100%;
   justify-content: space-between;
   background-image: url("https://www.transparenttextures.com/patterns/gplay.png"), linear-gradient(to right top, #786e6d, #8a8383) !important;
@@ -512,7 +693,8 @@ body.light-mode .video-bg:before {
     padding: 20px;
   }
 }
-#grey2 .content-wrapper {
+
+.content-wrapper {
   display: flex;
   flex-direction: column;
   color: var(--theme-color);
@@ -522,11 +704,12 @@ body.light-mode .video-bg:before {
   background-color: rgba(0, 0, 0, 0);
 }
 @media screen and (max-width: 510px) {
-  #grey2 .content-wrapper {
+  .content-wrapper {
     padding: 20px;
   }
 }
-#grey2 .content-wrapper-header {
+
+.content-wrapper-header {
   display: flex;
   align-items: center;
   width: 100%;
@@ -536,11 +719,11 @@ body.light-mode .video-bg:before {
   padding: 20px 40px;
 }
 @media screen and (max-width: 415px) {
-  #grey2 .content-wrapper-header {
+  .content-wrapper-header {
     padding: 20px;
   }
 }
-#grey2.overlay {
+.content-wrapper-header.overlay {
   pointer-events: none;
   transition: 0.3s;
   background-color: var(--overlay-bg);
@@ -642,8 +825,9 @@ body.light-mode .video-bg:before {
   cursor: pointer;
 }
 .content-section ul li {
+  font-family: "JetBrains Mono", monospace;
   list-style: none;
-  padding: 10px 18px;
+  padding: 10px 10px;
   display: flex;
   align-items: center;
   font-size: 16px;
@@ -683,8 +867,8 @@ body.light-mode .video-bg:before {
 }
 
 .status {
+  width: 135px;
   margin-left: auto;
-  width: 140px;
   font-size: 15px;
   position: relative;
 }
@@ -757,8 +941,8 @@ body.light-mode .video-bg:before {
 .dropdown ul {
   position: absolute;
   background: var(--dropdown-bg);
-  height: 110px;
-  width: 120px;
+  height: 70px;
+  width: 80px;
   right: 0;
   top: 20px;
   pointer-events: none;
@@ -972,4 +1156,8 @@ body.light-mode .video-bg:before {
 ::-webkit-scrollbar-thumb {
   background: var(--scrollbar-bg);
   border-radius: 10px;
+}
+
+.hide {
+  display: none !important;
 }
