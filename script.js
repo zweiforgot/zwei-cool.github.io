@@ -1,5 +1,15 @@
 var transitioning = false;
 
+if (navigator.userAgent.indexOf("Firefox") > 0) {
+ $('div > body').css("display", "none");
+ $('body').css("text-align", "center");
+var obj = $("body").text('Firefox is not supported.\nPlease try again on another browser.');
+obj.html(obj.html().replace(/\n/g,'<br/>'));
+
+ 
+ $('body').css("color", "#fff");
+}
+
 var isMobile = {
     Android: function() {
         return navigator.userAgent.match(/Android/i);
@@ -20,14 +30,6 @@ var isMobile = {
         return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
     }
 };
-if (navigator.userAgent.indexOf("Firefox") > 0) {
-    $(".menu-link").css("display","none");
-  $(".search-bar").css("display","none");
-  $(".left-side").css("display","none");
- $(".header-profile").css("display","none");
- $("#homeTab").css("display","none");
-  $("#mobile").css("display","flex");
-}
 if(isMobile.any()){
  $(".menu-link").css("display","none");
   $(".search-bar").css("display","none");
@@ -100,7 +102,10 @@ $(function () {
 
 $(".feedbutton").each(function () {
  $(this).on("click", function () {
-  $(".pop-up").addClass("visible");
+  $("#feedpop").addClass("visible");
+  setTimeout(function(){
+   $('.content-wrapper').removeClass("overlay");
+  },50);
  });
 });
 

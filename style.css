@@ -277,6 +277,9 @@ body.light-mode .video-bg:before {
 
 .notification {
   position: relative;
+  margin: auto;
+  width: 24px;
+  height: 24px;
 }
 .notification-number {
   position: absolute;
@@ -289,8 +292,6 @@ body.light-mode .video-bg:before {
   align-items: center;
   justify-content: center;
   color: #fff;
-  right: -6px;
-  top: -6px;
 }
 .notification + svg {
   margin-left: 22px;
