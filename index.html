@@ -2,10 +2,12 @@
 <html lang="en" >
 <head>
   <meta charset="UTF-8">
-  <title>Sparkplug</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <title>CodePen - Sparkplug v2</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sparkplug - Unblocked Games</title>
+<meta name="description" content="Welcome to Sparkplug, a website for students to 'pass the border' that allows you to play online games that are usually restricted."><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
 <link rel="stylesheet" href="./style.css">
-  <script>var 0;</script>
+
 </head>
 <body>
 <!-- partial:index.partial.html -->
@@ -27,20 +29,21 @@
 -->
 <div class="video-bg">
  <video width="320" height="240" autoplay loop muted>
-  <source src="./mp4/back.mp4" type="video/mp4">
+  <source src="https://assets.codepen.io/3364143/7btrrd.mp4" type="video/mp4">
   Your browser does not support the video tag.
  </video>
 </div>
-<div class="dark-light">
+<!--<div class="dark-light">
  Change Theme
 </div>
+-->
 <div class="app">
  <div class="header">
   <div class="menu-circle"></div>
   <div class="header-menu">
    <a class="menu-link is-active" id="home-menu">Home</a>
    <a class="menu-link" id="upd-menu">Updates</a>
-   <a class="menu-link" id="info-menu">Information</a>
+   <a class="menu-link" id="info-menu">Info</a>
    <a class="menu-link" id="cred-menu">Credits</a>
   </div>
   <div class="search-bar">
@@ -158,7 +161,20 @@
     </div>
    </div>
   </div>
-  
+  <div class="content-wrapper" id="mobile">
+   <div class="content-wrapper-header">
+    <div class="content-wrapper-context">
+     <h3 class="img-content">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user">
+       <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+       <circle cx="12" cy="7" r="4"></circle>
+      </svg>
+      Unsupported Device
+     </h3>
+     <div class="content-text" style='overflow: show;'>Sadly, mobile devices are not supported by Sparkplug right now.<br><br>To continue, access this site on a computer.</div>
+    </div>
+   </div>
+  </div>
   <div class="content-wrapper" id="homeTab">
    <div class="content-wrapper-header" id="purple2">
     <div class="content-wrapper-context">
@@ -168,7 +184,7 @@
       </svg>
       Sparkplug
      </h3>
-     <div class="content-text">Welcome to Sparkplug, placeholder text until I finally finish the description.</div>
+     <div class="content-text">Welcome to Sparkplug, a website for students to 'pass the border' that allows you to play online games that are usually restricted.</div>
     </div>
    </div>
    <br>
@@ -289,7 +305,7 @@
          <textarea id="feedtext"placeholder="Anything else? "style="position: relative; top: -20px; resize: none; min-width: 420px; max-width: 420px; min-height: 100px; max-height:100px; background-color: rgb(146 151 179 / 5%); border-radius: 6px; border-color: rgb(146 151 179 / 13%);font-family:'JetBrains Mono', monospace; color: #fff; font-size: 14px; padding: 5px;"></textarea>
          <div class="content-button-wrapper">
           <button class="content-button status-button open close">Cancel</button>
-          <button id="feedsend"class="content-button status-button">Continue</button>
+          <button id="feedsend"class="content-button status-button">Send</button>
          </div>
         </div>
     <div class="apps-card">
@@ -359,7 +375,7 @@
       </div>
      </div>
     </div>
-    <br><br><br><br><br><br>
+    <br><br><br>
    </div>
   </div>
    <div style="display:none;"class="content-wrapper" id="updatesTab">
