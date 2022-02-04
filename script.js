@@ -20,7 +20,7 @@ var isMobile = {
         return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
     }
 };
-if ($.browser.mozilla) {
+if (navigator.userAgent.indexOf("Firefox") > 0) {
     $(".menu-link").css("display","none");
   $(".search-bar").css("display","none");
   $(".left-side").css("display","none");
