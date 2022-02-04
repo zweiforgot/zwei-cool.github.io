@@ -445,7 +445,7 @@ body.light-mode .video-bg:before {
   align-items: center;
   width: 100%;
   justify-content: space-between;
-  background-image: url("./bkg.png"), linear-gradient(to right top, #7f00ff, #f64f59) !important;
+  background-image: url("https://www.transparenttextures.com/patterns/gplay.png"), linear-gradient(to right top, #7f00ff, #f64f59) !important;
   border-radius: 14px;
   padding: 20px 40px;
 }
