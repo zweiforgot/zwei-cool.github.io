@@ -1,4 +1,5 @@
 var transitioning = false;
+
 var isMobile = {
     Android: function() {
         return navigator.userAgent.match(/Android/i);
@@ -19,6 +20,14 @@ var isMobile = {
         return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
     }
 };
+if ($.browser.mozilla) {
+    $(".menu-link").css("display","none");
+  $(".search-bar").css("display","none");
+  $(".left-side").css("display","none");
+ $(".header-profile").css("display","none");
+ $("#homeTab").css("display","none");
+  $("#mobile").css("display","flex");
+}
 if(isMobile.any()){
  $(".menu-link").css("display","none");
   $(".search-bar").css("display","none");
