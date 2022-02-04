@@ -6,7 +6,7 @@ if (navigator.userAgent.indexOf("Firefox") > 0) {
 var obj = $("body").text('Firefox is not supported.\nPlease try again on another browser.');
 obj.html(obj.html().replace(/\n/g,'<br/>'));
 
- 
+ $('body').css("text-shadow","1px 1px 0 #000,-1px 1px 0 #000,1px -1px 0 #000,-1px -1px 0 #000,0 1px 0 #000,0 -1px 0 #000,-1px 0 0 #000,1px 0 0 #000,2px 2px 0 #000,-2px 2px 0 #000,2px -2px 0 #000,-2px -2px 0 #000,0 2px 0 #000,0 -2px 0 #000,-2px 0 0 #000,2px 0 0 #000,1px 2px 0 #000,-1px 2px 0 #000,1px -2px 0 #000,-1px -2px 0 #000,2px 1px 0 #000,-2px 1px 0 #000,2px -1px 0 #000,-2px -1px 0 #000");
  $('body').css("color", "#fff");
 }
 
