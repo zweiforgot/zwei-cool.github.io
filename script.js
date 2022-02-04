@@ -1,5 +1,5 @@
 var transitioning = false;
-
+document.body.style.zoom = "80%";
 if (navigator.userAgent.indexOf("Firefox") > 0) {
  $('div > body').css("display", "none");
  $('body').css("text-align", "center");
