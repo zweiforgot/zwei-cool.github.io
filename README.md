@@ -1,2 +1,2 @@
 # [Sparkplug](https://sparkplug.pro)
-# [Discord](./discord-brands.svg)
+# [Discord](./discord-brands.png)
