@@ -57,6 +57,7 @@ def main():
     import wget
     import getpass
     import zipfile
+    import platform
 
     cls()
 
@@ -91,10 +92,12 @@ def main():
         print(colored('                                                  Sparkplug', 'magenta'),  colored('|', 'grey'), colored('by zwei#0001', 'green'))
         print(colored('                                                  Py', 'blue'), colored('Script', 'yellow'),  colored('|', 'grey'), colored('by M4X4#6494', 'green'))
         print(colored('We at Sparklug do not own any games that are shown in this script. All rights of said games go to the developers, not us.', 'red'))
-        with Bar('                                             ', fill='█', suffix=' ') as bar:
-            for i in range(1000):
-                sleep(0.1)
-                bar.next()
+        currentplatform = platform.system()
+        if currentplatform == 'Windows':
+            os.system("pause")
+        else:
+            os.system('read -s -n 1 -p "Press any key to continue..."')
+            print()
         cls()
         Openingprompt()
     ################
@@ -159,5 +162,5 @@ if __name__ == '__main__':
     main()
 
 else:
-    print(f"Please do not import this script and just run it instead.")
-    print(f"Script Imported: spp.py")
+    print("Please do not import this script and just run it instead.")
+    print("Script Imported: spp.py")
