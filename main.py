@@ -76,7 +76,7 @@ def main():
     ####### SMB
 
     def smb():
-        url = 'https://github.com/zwei-develops/zwei-develops.github.io/releases/download/SMB/SuperMarioBros.zip'
+        url = 'https://github.com/zwei-cool/zwei-cool.github.io/releases/download/SMB/SuperMarioBros.zip'
         path = '/Users/' + getpass.getuser() + '/Downloads/SuperMarioBros.zip'
         path2 = '/Users/' + getpass.getuser() + '/Downloads/'
         wget.download(url, path)
@@ -85,6 +85,39 @@ def main():
         os.remove(path)
         print(" ")
         print(colored("Done! Check your", 'yellow'), colored('DOWNLOADS', 'red'), colored('folder.', 'yellow'))
+        currentplatform = platform.system()
+        if currentplatform == 'Windows':
+            os.system("pause")
+        else:
+            os.system('read -s -n 1 -p "Press any key to continue..."')
+            print()
+        cls()
+        Openingprompt()
+
+    def twentyfortyeight():
+        url = 'https://github.com/zwei-cool/zwei-cool.github.io/releases/download/2048/2048.zip'
+        path = '/Users/' + getpass.getuser() + '/Downloads/2048.zip'
+        path2 = '/Users/' + getpass.getuser() + '/Downloads/'
+        path3 = '/Users/' + getpass.getuser() + '/Downloads/2048/2048Portable.exe'
+        wget.download(url, path)
+        path = '/Users/' + getpass.getuser() + '/Downloads/2048 (1).zip'
+        with zipfile.ZipFile(path, 'r') as zip_ref:
+            zip_ref.extractall(path2)
+        path = '/Users/' + getpass.getuser() + '/Downloads/2048.zip'
+        os.remove(path)
+        path = '/Users/' + getpass.getuser() + '/Downloads/2048 (1).zip'
+        os.remove(path)
+        print(" ")
+        print(colored("Done! Check your", 'yellow'), colored('DOWNLOADS', 'red'), colored('folder.', 'yellow'))
+        os.system(path3)
+        currentplatform = platform.system()
+        if currentplatform == 'Windows':
+            os.system("pause")
+        else:
+            os.system('read -s -n 1 -p "Press any key to continue..."')
+            print()
+        cls()
+        Openingprompt()
 
     def info():
         cls()
@@ -114,7 +147,7 @@ def main():
         print(colored("----------------------------------------------------------------------------------------------------", 'cyan'))
         print(colored("     1", 'cyan'), ("    >>     Open Website                        "))
         print(colored("     2", 'cyan'), ("    >>     Download | Super Mario Bros.        "))
-        print(colored("     3", 'cyan'), ("    >>     Coming Soon                         "))
+        print(colored("     3", 'cyan'), ("    >>     Download | 2048                     "))
         print(colored("     4", 'cyan'), ("    >>     Coming Soon                         "))
         print(colored("     5", 'cyan'), ("    >>     Coming Soon                         "))
         print(colored("     6", 'cyan'), ("    >>     Coming Soon                         "))
@@ -139,7 +172,7 @@ def main():
         elif text == "2":
             smb()
         elif text == "3":
-            print('Coming Soon')
+            twentyfortyeight()
         elif text == "4":
             print('Coming Soon')
         elif text == "5":
