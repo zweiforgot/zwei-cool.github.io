@@ -3,6 +3,7 @@
 ################
 
 def main():
+
     #################
     ##   Imports   ##
     #################
@@ -20,7 +21,6 @@ def main():
 
     import subprocess
     import sys
-    import os
     subprocess.check_call(
         [sys.executable, '-m', 'pip', 'install', 'prompt_toolkit'])
     subprocess.check_call(
@@ -57,7 +57,9 @@ def main():
     import wget
     import getpass
     import zipfile
+    from zipfile import BadZipFile
     import platform
+    from os.path import exists
 
     cls()
 
@@ -97,16 +99,18 @@ def main():
     def twentyfortyeight():
         url = 'https://github.com/zwei-cool/zwei-cool.github.io/releases/download/2048/2048.zip'
         path = '/Users/' + getpass.getuser() + '/Downloads/2048.zip'
+        path1 = '/Users/' + getpass.getuser() + '/Downloads/2048 (1).zip'
         path2 = '/Users/' + getpass.getuser() + '/Downloads/'
         path3 = '/Users/' + getpass.getuser() + '/Downloads/2048/2048Portable.exe'
         wget.download(url, path)
-        path = '/Users/' + getpass.getuser() + '/Downloads/2048 (1).zip'
-        with zipfile.ZipFile(path, 'r') as zip_ref:
-            zip_ref.extractall(path2)
-        path = '/Users/' + getpass.getuser() + '/Downloads/2048.zip'
-        os.remove(path)
-        path = '/Users/' + getpass.getuser() + '/Downloads/2048 (1).zip'
-        os.remove(path)
+        if os.path.exists(path1):
+            with zipfile.ZipFile(path1, 'r') as zip_ref:
+                zip_ref.extractall(path2)
+            os.remove(path1)
+        else:
+            with zipfile.ZipFile(path, 'r') as zip_ref:
+                zip_ref.extractall(path2)
+            os.remove(path)
         print(" ")
         print(colored("Done! Check your", 'yellow'), colored('DOWNLOADS', 'red'), colored('folder.', 'yellow'))
         os.system(path3)
@@ -133,6 +137,41 @@ def main():
             print()
         cls()
         Openingprompt()
+    
+    def games():
+        cls()
+        print(colored('Welcome to Sparkplug Python, A python script for students to','yellow'), colored('"pass the border"', 'red'), colored('that allows you to play online games that are usually restricted.', 'yellow'))
+        print(colored("---------------------------", 'cyan'))
+        print(colored('Sparkplug', 'magenta'),  colored('|', 'grey'), colored('by zwei#0001', 'green'))
+        print(colored('Py', 'blue'), colored('Script', 'yellow'),  colored('|', 'grey'), colored('by M4X4#6494', 'green'))
+        print(colored("---------------------------", 'cyan'))
+        print(colored("Don't know where to get started?", 'blue'))
+        print(colored("Choose something from the list below. These are all games that the creator has picked for new players.", 'blue'))
+        print(colored("----------------------------------------------------------------------------------------------------", 'cyan'))
+        print(colored("     1", 'cyan'), ("    >>     Download | Super Mario Bros.        "))
+        print(colored("     2", 'cyan'), ("    >>     Download | 2048                     "))
+        print(colored("     0", "cyan"), ("    >>     Back                                "))
+        print(colored("----------------------------------------------------------------------------------------------------", 'cyan'))
+        while True:
+            text = prompt('Option # >> ')
+
+            ########################
+            ##   Call Functions   ##
+            ########################
+
+            if text == "1":
+                smb()
+            elif text == "2":
+                twentyfortyeight()
+            elif text == "0":
+                cls()
+                Openingprompt()
+            elif text == "cls":
+                cls()
+                Openingprompt()
+            else:
+                print(colored('Unknown Option:', 'red'), colored(text, 'cyan'))
+
     ################
     ##   Prompt   ##
     ################
@@ -143,49 +182,36 @@ def main():
         print(colored('Py', 'blue'), colored('Script', 'yellow'),  colored('|', 'grey'), colored('by M4X4#6494', 'green'))
         print(colored("---------------------------", 'cyan'))
         print(colored("Don't know where to get started?", 'blue'))
-        print(colored("Choose something from the list below. These are all games that the creator has picked for new players.", 'blue'))
+        print(colored("Choose something from the list below.", 'blue'))
         print(colored("----------------------------------------------------------------------------------------------------", 'cyan'))
         print(colored("     1", 'cyan'), ("    >>     Open Website                        "))
-        print(colored("     2", 'cyan'), ("    >>     Download | Super Mario Bros.        "))
-        print(colored("     3", 'cyan'), ("    >>     Download | 2048                     "))
-        print(colored("     4", 'cyan'), ("    >>     Coming Soon                         "))
-        print(colored("     5", 'cyan'), ("    >>     Coming Soon                         "))
-        print(colored("     6", 'cyan'), ("    >>     Coming Soon                         "))
-        print(colored("     7", "cyan"), ("    >>     Credits / Info                      "))
+        print(colored("     2", 'cyan'), ("    >>     Games List                          "))
+        print(colored("     3", "cyan"), ("    >>     Credits / Info                      "))
         print(colored("----------------------------------------------------------------------------------------------------", 'cyan'))
+        while True:
+            text = prompt('Option # >> ')
+
+            ########################
+            ##   Call Functions   ##
+            ########################
+
+            if text == "1":
+                website()
+            elif text == "2":
+                games()
+            elif text == "3":
+                info()
+            elif text == "cls":
+                cls()
+                Openingprompt()
+            else:
+                print(colored('Unknown Option:', 'red'), colored(text, 'cyan'))
 
     #############
     ##  Main   ##
     #############
 
     Openingprompt()
-
-    while True:
-        text = prompt('Option # >> ')
-
-        ########################
-        ##   Call Functions   ##
-        ########################
-
-        if text == "1":
-            website()
-        elif text == "2":
-            smb()
-        elif text == "3":
-            twentyfortyeight()
-        elif text == "4":
-            print('Coming Soon')
-        elif text == "5":
-            print('Coming Soon')
-        elif text == "6":
-            print('Coming Soon')
-        elif text == "7":
-            info()
-        elif text == "cls":
-            cls()
-            Openingprompt()
-        else:
-            print(colored('Unknown Option:', 'red'), colored(text, 'cyan'))
 
 ######################
 ##   Script Check   ##
