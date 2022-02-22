@@ -21,14 +21,34 @@ def main():
 
     import subprocess
     import sys
+    
+    print(' ')
+    print('Installing Prompt ToolKit')
+    print(' ')
     subprocess.check_call(
         [sys.executable, '-m', 'pip', 'install', 'prompt_toolkit'])
+
+    print(' ')
+    print('Installing WGet')
+    print(' ')
     subprocess.check_call(
         [sys.executable, '-m', 'pip', 'install', 'wget'])
+
+    print(' ')
+    print('Installing TermColor')
+    print(' ')
     subprocess.check_call(
         [sys.executable, '-m', 'pip', 'install', 'termcolor'])
+
+    print(' ')
+    print('Updating PiP')
+    print(' ')
     subprocess.check_call(
         [sys.executable, '-m', 'pip', 'install', '--upgrade', 'pip'])
+        
+    print(' ')
+    print('Installing Progress')
+    print(' ')
     subprocess.check_call(
         [sys.executable, '-m', 'pip', 'install', 'progress'])
 
@@ -73,9 +93,7 @@ def main():
                 sleep(0.001)
                 bar.next()
         
-        webbrowser.open('https://sparkplug.pro')
-
-    ####### SMB
+        webbrowser.open('https://zwei-cool.github.io/')
 
     def smb():
         url = 'https://github.com/zwei-cool/zwei-cool.github.io/releases/download/SMB/SuperMarioBros.zip'
