@@ -2,8 +2,8 @@
 ##   StartUp Options   ##
 #########################
 
-skipModuleInstall = True      # If "True", this skips the module install (see the required modules section)                                        | Recommended Option: False
-hideLoadingBars = True        # If "True", this will hide all loading bars, with the exception of downloads.                                       | Recommended Option: False
+skipModuleInstall = False      # If "True", this skips the module install (see the required modules section)                                        | Recommended Option: False
+hideLoadingBars = False        # If "True", this will hide all loading bars, with the exception of downloads.                                       | Recommended Option: False
 enableDebugFeatures = False    # If "True", this prints some debugging info, as well as enables some test features. This usually has no effect.     | Recommended Option: False
 
 ################
