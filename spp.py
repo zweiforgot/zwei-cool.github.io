@@ -76,21 +76,6 @@ def main():
 
             cls()
 
-    ####### Loading Bar
-
-    import termcolor
-    from termcolor import colored
-    print(colored('INITIALIZING:', 'yellow'), colored('SPARKPLUG: PY', 'magenta'))
-
-    from time import sleep
-    from progress.bar import Bar
-
-    if hideLoadingBars == False:
-        with Bar('Loading', fill='█', suffix='%(percent).1f%% - %(eta)ds') as bar:
-                for i in range(100):
-                    sleep(0.01)
-                    bar.next()
-
     ####### Other Modules
 
     import prompt_toolkit
@@ -102,6 +87,20 @@ def main():
     from zipfile import BadZipFile
     import platform
     from os.path import exists
+    import termcolor
+    from termcolor import colored
+    from time import sleep
+    from progress.bar import Bar
+
+    ####### Loading Bar
+
+    print(colored('INITIALIZING:', 'yellow'), colored('SPARKPLUG: PY', 'magenta'))
+
+    if hideLoadingBars == False:
+        with Bar('Loading', fill='█', suffix='%(percent).1f%% - %(eta)ds') as bar:
+                for i in range(100):
+                    sleep(0.01)
+                    bar.next()
 
     cls()
 
@@ -248,6 +247,9 @@ def main():
             elif text == "cls":
                 cls()
                 Openingprompt()
+            elif enableDebugFeatures == True:
+                if text == "0":
+                    print(colored('Debugging commands have not been set up as of now, come back later.', 'cyan'))
             else:
                 print(colored('Syntax Error: Unknown Option "','red'), colored(text,'cyan'), colored('"', 'red'))
 
