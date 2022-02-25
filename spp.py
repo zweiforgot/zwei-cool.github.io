@@ -1,3 +1,11 @@
+#########################
+##   StartUp Options   ##
+#########################
+
+skipModuleInstall = True      # If "True", this skips the module install (see the required modules section)                                        | Recommended Option: False
+hideLoadingBars = True        # If "True", this will hide all loading bars, with the exception of downloads.                                       | Recommended Option: False
+enableDebugFeatures = False    # If "True", this prints some debugging info, as well as enables some test features. This usually has no effect.     | Recommended Option: False
+
 ################
 ##   Signal   ##
 ################
@@ -21,53 +29,67 @@ def main():
 
     import subprocess
     import sys
-    
-    print(' ')
-    print('Installing Prompt ToolKit')
-    print(' ')
-    subprocess.check_call(
-        [sys.executable, '-m', 'pip', 'install', 'prompt_toolkit'])
 
-    print(' ')
-    print('Installing WGet')
-    print(' ')
-    subprocess.check_call(
-        [sys.executable, '-m', 'pip', 'install', 'wget'])
+    if skipModuleInstall == False:
+        if enableDebugFeatures:
+            print(' ')
+            print('Installing Prompt ToolKit')
+            subprocess.check_call(
+                [sys.executable, '-m', 'pip', 'install', 'prompt_toolkit'])
 
-    print(' ')
-    print('Installing TermColor')
-    print(' ')
-    subprocess.check_call(
-        [sys.executable, '-m', 'pip', 'install', 'termcolor'])
+            print(' ')
+            print('Installing WGet')
+            subprocess.check_call(
+                [sys.executable, '-m', 'pip', 'install', 'wget'])
 
-    print(' ')
-    print('Updating PiP')
-    print(' ')
-    subprocess.check_call(
-        [sys.executable, '-m', 'pip', 'install', '--upgrade', 'pip'])
-        
-    print(' ')
-    print('Installing Progress')
-    print(' ')
-    subprocess.check_call(
-        [sys.executable, '-m', 'pip', 'install', 'progress'])
+            print(' ')
+            print('Installing TermColor')
+            subprocess.check_call(
+                [sys.executable, '-m', 'pip', 'install', 'termcolor'])
 
-    cls()
+            print(' ')
+            print('Updating PiP')
+            subprocess.check_call(
+                [sys.executable, '-m', 'pip', 'install', '--upgrade', 'pip'])
+                
+            print(' ')
+            print('Installing Progress')
+            subprocess.check_call(
+                [sys.executable, '-m', 'pip', 'install', 'progress'])
+
+            cls()
+        else:
+            subprocess.check_call(
+                [sys.executable, '-m', 'pip', 'install', 'prompt_toolkit'])
+
+            subprocess.check_call(
+                [sys.executable, '-m', 'pip', 'install', 'wget'])
+
+            subprocess.check_call(
+                [sys.executable, '-m', 'pip', 'install', 'termcolor'])
+
+            subprocess.check_call(
+                [sys.executable, '-m', 'pip', 'install', '--upgrade', 'pip'])
+                
+            subprocess.check_call(
+                [sys.executable, '-m', 'pip', 'install', 'progress'])
+
+            cls()
 
     ####### Loading Bar
 
     import termcolor
     from termcolor import colored
-
     print(colored('INITIALIZING:', 'yellow'), colored('SPARKPLUG: PY', 'magenta'))
 
     from time import sleep
     from progress.bar import Bar
 
-    with Bar('Loading', fill='█', suffix='%(percent).1f%% - %(eta)ds') as bar:
-            for i in range(100):
-                sleep(0.01)
-                bar.next()
+    if hideLoadingBars == False:
+        with Bar('Loading', fill='█', suffix='%(percent).1f%% - %(eta)ds') as bar:
+                for i in range(100):
+                    sleep(0.01)
+                    bar.next()
 
     ####### Other Modules
 
@@ -88,11 +110,13 @@ def main():
     ###################
 
     def website():
-        with Bar('Loading', fill='█', suffix='%(percent).1f%% - %(eta)ds') as bar:
-            for i in range(100):
-                sleep(0.001)
-                bar.next()
-        
+        if hideLoadingBars == False:
+            with Bar('Loading', fill='█', suffix='%(percent).1f%% - %(eta)ds') as bar:
+                for i in range(100):
+                    sleep(0.001)
+                    bar.next()
+        if enableDebugFeatures == True:
+            print(colored('DEBUG: Opening Website:', 'grey'), colored('https://zwei-cool.github.io/','cyan'))
         webbrowser.open('https://zwei-cool.github.io/')
 
     def smb():
@@ -155,7 +179,7 @@ def main():
             print()
         cls()
         Openingprompt()
-    
+
     def games():
         cls()
         print(colored('Welcome to Sparkplug Python, A python script for students to','yellow'), colored('"pass the border"', 'red'), colored('that allows you to play online games that are usually restricted.', 'yellow'))
@@ -188,7 +212,7 @@ def main():
                 cls()
                 Openingprompt()
             else:
-                print(colored('Unknown Option:', 'red'), colored(text, 'cyan'))
+                print(colored('Syntax Error: Unknown Option "', 'red'), colored(text, 'cyan'), colored('"', 'red'))
 
     ################
     ##   Prompt   ##
@@ -205,6 +229,8 @@ def main():
         print(colored("     1", 'cyan'), ("    >>     Open Website                        "))
         print(colored("     2", 'cyan'), ("    >>     Games List                          "))
         print(colored("     3", "cyan"), ("    >>     Credits / Info                      "))
+        if enableDebugFeatures:
+            print(colored("     0", 'cyan'), ("    >>     Debug                               "))
         print(colored("----------------------------------------------------------------------------------------------------", 'cyan'))
         while True:
             text = prompt('Option # >> ')
@@ -223,7 +249,7 @@ def main():
                 cls()
                 Openingprompt()
             else:
-                print(colored('Unknown Option:', 'red'), colored(text, 'cyan'))
+                print(colored('Syntax Error: Unknown Option "','red'), colored(text,'cyan'), colored('"', 'red'))
 
     #############
     ##  Main   ##
