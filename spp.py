@@ -2,9 +2,9 @@
 ##   StartUp Options   ##
 #########################
 
-skipModuleInstall = False      # If "True", this skips the module install (see the required modules section)                                        | Recommended Option: False
-hideLoadingBars = False        # If "True", this will hide all loading bars, with the exception of downloads.                                       | Recommended Option: False
-enableDebugFeatures = False    # If "True", this prints some debugging info, as well as enables some test features. This usually has no effect.     | Recommended Option: False
+skipModuleInstall = True      # If "True", this skips the module install (see the required modules section)                                        | Recommended Option: False
+hideLoadingBars = True        # If "True", this will hide all loading bars, with the exception of downloads.                                       | Recommended Option: False
+enableDebugFeatures = True    # If "True", this prints some debugging info, as well as enables some test features. This usually has no effect.     | Recommended Option: False
 
 ################
 ##   Signal   ##
@@ -87,16 +87,15 @@ def main():
     from zipfile import BadZipFile
     import platform
     from os.path import exists
-    import termcolor
-    from termcolor import colored
     from time import sleep
     from progress.bar import Bar
+    import termcolor
+    from termcolor import colored
 
     ####### Loading Bar
 
-    print(colored('INITIALIZING:', 'yellow'), colored('SPARKPLUG: PY', 'magenta'))
-
     if hideLoadingBars == False:
+        print(colored('INITIALIZING:', 'yellow'), colored('SPARKPLUG: PY', 'magenta'))
         with Bar('Loading', fill='█', suffix='%(percent).1f%% - %(eta)ds') as bar:
                 for i in range(100):
                     sleep(0.01)
@@ -229,7 +228,7 @@ def main():
         print(colored("     2", 'cyan'), ("    >>     Games List                          "))
         print(colored("     3", "cyan"), ("    >>     Credits / Info                      "))
         if enableDebugFeatures:
-            print(colored("     0", 'cyan'), ("    >>     Debug                               "))
+            print(colored("     0", 'cyan'), ("    >>     Debug                           "))
         print(colored("----------------------------------------------------------------------------------------------------", 'cyan'))
         while True:
             text = prompt('Option # >> ')
@@ -244,12 +243,12 @@ def main():
                 games()
             elif text == "3":
                 info()
+            elif enableDebugFeatures:
+                if text == "0":
+                    print(colored("Nothing to debug now, check back later.", "cyan"))
             elif text == "cls":
                 cls()
                 Openingprompt()
-            elif enableDebugFeatures == True:
-                if text == "0":
-                    print(colored('Debugging commands have not been set up as of now, come back later.', 'cyan'))
             else:
                 print(colored('Syntax Error: Unknown Option "','red'), colored(text,'cyan'), colored('"', 'red'))
 
